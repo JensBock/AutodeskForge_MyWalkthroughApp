@@ -23,6 +23,15 @@
 var express = require('express');           // For web server
 var Axios = require('axios');               // A Promised base http client
 var bodyParser = require('body-parser');    // Receive JSON format
+var dotenv = require('dotenv');                  // Load processvariables
+
+const result = dotenv.config()
+ 
+if (result.error) {
+  throw result.error
+}
+ 
+console.log(result.parsed)
 
 // Set up Express web server
 var app = express();
